@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Camera } from "../../assets";
-import { history } from "../../store/rootReducer";
-import Header from "../header";
+import { Camera } from "../assets";
+import { withRouter } from "react-router-dom";
+import { Header, Loader } from "../components";
 
-export default () => {
+export default withRouter(({ history }) => {
   const [file, setFile] = useState(undefined);
   const [previewURL, setPreviewURL] = useState("");
 
@@ -21,7 +21,7 @@ export default () => {
   };
 
   if (file != undefined) {
-    history.push("./result");
+    setTimeout(() => history.push("/result"), 3000);
   }
 
   return (
@@ -52,18 +52,27 @@ export default () => {
             </BlankImg>
           </>
         ) : (
-          <img
-            alt={""}
-            style={{ objectFit: "cover", display: "flex", margin: "0 auto" }}
-            src={previewURL}
-            width={"80%"}
-            height={"375px"}
-          />
+          <>
+            <Blur>
+              <img
+                alt={""}
+                style={{
+                  objectFit: "cover",
+                  display: "flex",
+                  margin: "0 auto",
+                }}
+                src={previewURL}
+                width={"80%"}
+                height={"375px"}
+              />
+            </Blur>
+            <Loader />
+          </>
         )}
       </div>
     </>
   );
-};
+});
 
 const BlankBox = styled.div`
   z-index: 1;
@@ -79,4 +88,10 @@ const BlankImg = styled.div`
   justify-content: center;
   align-items: center;
   color: #a1a1a1;
+`;
+
+const Blur = styled.div`
+  background-color: lightgray;
+  opacity: 0.5;
+  justify-content: center;
 `;

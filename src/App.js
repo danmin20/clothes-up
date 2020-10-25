@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Main from "./components/main";
-import result from "./components/result";
-import Upload from "./components/upload";
+import { Main, Result, Search, Man, Woman } from "./pages";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/upload" component={Upload} />
-        <Route exact path="/result" component={result} />
+        <Route path="/search" component={Search} />
+        <Route path="/result" component={Result} />
+        <Route path="/woman" component={Woman} />
+        <Route path="/man" component={Man} />
       </Switch>
     </BrowserRouter>
   );

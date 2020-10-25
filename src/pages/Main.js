@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import { history } from "../../store/rootReducer";
+import { withRouter } from "react-router-dom";
 
-export default () => {
+export default withRouter(({ history }) => {
   return (
     <Container
       onClick={() => {
-        history.push("/upload");
+        history.push("/woman");
       }}
     >
       <Title>클로즈업</Title>
     </Container>
   );
-};
+});
 
 const Container = styled.div`
   width: 100%;

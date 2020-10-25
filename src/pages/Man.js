@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "../header";
+import { Header, SearchBar } from "../components";
 
 export default () => {
   return (
     <>
       <Header />
+      <SearchBar />
+      man
     </>
   );
 };

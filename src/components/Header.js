@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { withRouter } from "react-router-dom";
 
-export default () => {
+export default withRouter(({ history }) => {
   return (
     <Container>
-      <div>WOMAN</div>
-      <div>MAN</div>
-      <div>SEARCH</div>
+      <div onClick={() => history.push("/woman")}>WOMAN</div>
+      <div onClick={() => history.push("/man")}>MAN</div>
+      <div onClick={() => history.push("/search")}>SEARCH</div>
     </Container>
   );
-};
+});
 
 const Container = styled.div`
   height: 20px;
