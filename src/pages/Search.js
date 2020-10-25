@@ -1,35 +1,45 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import { Camera } from "../assets";
 import { withRouter } from "react-router-dom";
 import { Header, Loader } from "../components";
 import Intro from "../components/Intro";
 
 export default withRouter(({ history }) => {
-  const [file, setFile] = useState(undefined);
   const [previewURL, setPreviewURL] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const selectImg = (e) => {
+  const trigger = () => {
+    setIsLoading(true);
+    let form = new FormData();
+    let image = document.getElementById("image");
+    form.append("image", image.files[0]);
+
     const reader = new FileReader();
-    const targetFile = e.target.files[0];
-    setFile(targetFile);
-
+    const targetFile = image.files[0];
     reader.onloadend = () => {
       setPreviewURL(reader.result);
     };
-
     reader.readAsDataURL(targetFile);
-  };
 
-  if (file !== undefined) {
-    setTimeout(() => history.push("/result"), 3000);
-  }
+    axios
+      .post("https://clothesup.herokuapp.com/predict", form, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then(function (response) {
+        setIsLoading(false);
+        history.push(`/result/${response.data.class_id}`);
+      });
+  };
 
   return (
     <>
       <Header />
       <div>
-        {file === undefined ? (
+        {!isLoading ? (
           <>
             <BlankBox />
             <BlankImg
@@ -41,6 +51,7 @@ export default withRouter(({ history }) => {
               <Camera />
               <div>사진을 선택해주세요</div>
               <input
+                id="image"
                 type="file"
                 style={{
                   marginTop: "5px",
@@ -48,7 +59,7 @@ export default withRouter(({ history }) => {
                   zIndex: 0,
                   height: "375px",
                 }}
-                onChange={selectImg}
+                onChange={trigger}
               />
             </BlankImg>
           </>
