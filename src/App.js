@@ -1,17 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Main, Result, Search, Man, Woman, Unisex } from "./pages";
+import { Main, Result, Search, List } from "./pages";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Main} />
+        <Route path="/list/:id" component={List} />
         <Route path="/search" component={Search} />
         <Route path="/result/:id" component={Result} />
-        <Route path="/woman" component={Woman} />
-        <Route path="/man" component={Man} />
-        <Route path="/unisex" component={Unisex} />
       </Switch>
     </BrowserRouter>
   );

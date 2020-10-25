@@ -3,11 +3,27 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 
 export default withRouter(({ history }) => {
+  const itemId = history.location.pathname.split("/")[2];
   return (
     <Container>
-      <div onClick={() => history.push("/woman")}>WOMAN</div>
-      <div onClick={() => history.push("/man")}>MAN</div>
-      <div onClick={() => history.push("/unisex")}>UNISEX</div>
+      <div
+        style={{ color: itemId === "woman" && "gray" }}
+        onClick={() => history.push("/list/woman")}
+      >
+        WOMAN
+      </div>
+      <div
+        style={{ color: itemId === "man" && "gray" }}
+        onClick={() => history.push("/list/man")}
+      >
+        MAN
+      </div>
+      <div
+        style={{ color: itemId === "unisex" && "gray" }}
+        onClick={() => history.push("/list/unisex")}
+      >
+        UNISEX
+      </div>
       <div style={{ color: "black" }} onClick={() => history.push("/search")}>
         SEARCH
       </div>
