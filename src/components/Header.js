@@ -7,7 +7,10 @@ export default withRouter(({ history }) => {
     <Container>
       <div onClick={() => history.push("/woman")}>WOMAN</div>
       <div onClick={() => history.push("/man")}>MAN</div>
-      <div onClick={() => history.push("/search")}>SEARCH</div>
+      <div onClick={() => history.push("/unisex")}>UNISEX</div>
+      <div style={{ color: "black" }} onClick={() => history.push("/search")}>
+        SEARCH
+      </div>
     </Container>
   );
 });
@@ -15,10 +18,11 @@ export default withRouter(({ history }) => {
 const Container = styled.div`
   height: 20px;
   padding: 15px 10px;
+  font-size: 18px;
   background-color: #da291c;
   display: flex;
   justify-content: space-around;
   color: white;
-  font-family: "Recipekorea";
-  font-style: italic;
+  font-weight: 700;
+  font-family: "LotteMartHappy", sans-serif;
 `;

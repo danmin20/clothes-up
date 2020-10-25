@@ -24,7 +24,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-family: "Recipekorea";
+  font-family: 'LotteMartHappy', sans-serif;
   font-size: 30px;
   font-style: italic;
   color: white;

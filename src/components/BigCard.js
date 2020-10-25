@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 export default ({ url, text }) => {
   return (
-    <Card style={{ backgroundImage: `url(${url})` }}>
+    <>
+      <Card style={{ backgroundImage: `url(${url})` }} />
       <Text>{text}</Text>
-    </Card>
+    </>
   );
 };
 
@@ -24,10 +25,7 @@ const Card = styled.div`
 
 const Text = styled.div`
   width: 100%;
-  padding: 10px;
-  margin-top: 100px;
-  background-color: white;
-  opacity: 0.5;
-  justify-content:center;
+  margin-bottom: 10px;
+  justify-content: center;
   text-align: center;
 `;

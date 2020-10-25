@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Camera } from "../assets";
 import { withRouter } from "react-router-dom";
 import { Header, Loader } from "../components";
+import Intro from "../components/Intro";
 
 export default withRouter(({ history }) => {
   const [file, setFile] = useState(undefined);
@@ -70,6 +71,7 @@ export default withRouter(({ history }) => {
           </>
         )}
       </div>
+      <Intro />
     </>
   );
 });

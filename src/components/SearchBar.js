@@ -24,10 +24,10 @@ const Container = styled.div`
 
 const SearchInput = styled.input`
   border: 0;
-  width: 250px;
+  width: 70%;
   height: 38px;
-  border-radius: 20px;
-  margin: 15px 0;
+  border-radius: 10px;
+  margin-bottom: 15px;
   padding: 0 20px;
   &::placeholder {
     color: #adadad;
