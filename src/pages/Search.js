@@ -21,7 +21,7 @@ export default withRouter(({ history }) => {
     reader.readAsDataURL(targetFile);
   };
 
-  if (file != undefined) {
+  if (file !== undefined) {
     setTimeout(() => history.push("/result"), 3000);
   }
 
