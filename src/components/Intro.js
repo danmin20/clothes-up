@@ -13,7 +13,7 @@ export default () => {
           fontWeight: "700",
         }}
       >
-        CLOTHES-UP
+        CLOTH-UP
       </div>
       <div
         style={{
