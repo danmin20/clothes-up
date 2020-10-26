@@ -11,7 +11,7 @@ Web for Cloth-Up<br>
 ## Web
 Name : "클로즈업"<br>
 Page : [https://clothup.netlify.app/](https://clothup.netlify.app/)<br>
-Presentation : [프로젝트 소개](https://2020unilion.s3.amazonaws.com/project/61/project_file_%E1%84%86%E1%85%A5%E1%86%BA%E1%84%89%E1%85%A1_%E1%84%85%E1%85%A9%E1%86%BA%E1%84%83%E1%85%A6_%E1%84%92%E1%85%A2%E1%84%8F%E1%85%A5%E1%84%90%E1%85%A9%E1%86%AB_PPT_-%E1%84%8D%E1%85%B5%E1%86%AB%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC.pdf)
+Presentation : [프로젝트 소개](https://2020unilion.s3.amazonaws.com/project/61/project_file_%E1%84%86%E1%85%A5%E1%86%BA%E1%84%89%E1%85%A1_%E1%84%85%E1%85%A9%E1%86%BA%E1%84%83%E1%85%A6_%E1%84%92%E1%85%A2%E1%84%8F%E1%85%A5%E1%84%90%E1%85%A9%E1%86%AB_PPT_-%E1%84%8D%E1%85%B5%E1%86%AB%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC.pdf)<br>
 Testing : [시연영상](https://www.youtube.com/watch?v=QoNFwpx4Y5o&feature=youtu.be)
 
 ### Made With
